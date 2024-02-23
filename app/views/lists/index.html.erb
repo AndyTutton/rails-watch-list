@@ -1,0 +1,9 @@
+<h1>Movie lists</h1>
+<ol class="my-3">
+  <% @lists.each do |list| %>
+    <%# <%= link_to list_path(list) do %>
+      <li>
+        <p><%= list.name %></p>
+      </li>
+    <% end %>
+</ol>
