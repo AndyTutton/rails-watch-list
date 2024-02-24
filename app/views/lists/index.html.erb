@@ -1,9 +1,14 @@
 <h1>Movie lists</h1>
-<ol class="my-3">
+<ol class="">
   <% @lists.each do |list| %>
-    <%# <%= link_to list_path(list) do %>
+    <%= link_to list_path(list) do %>
       <li>
         <p><%= list.name %></p>
       </li>
     <% end %>
+  <% end %>
 </ol>
+<p><%= link_to "Add movie list", new_list_path %></p>
+
+<%# pe - print embedded %>
+<%# er - embedded ruby %>

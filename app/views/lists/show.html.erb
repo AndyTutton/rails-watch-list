@@ -1,4 +1,10 @@
-<div>
-  <h1> <%= @list.name %> </h1>
-  <p><em><%= @list.name.capitalize %></em> </p>
-</div>
+<h1> <%= @list.name %> </h1>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <h1><%= bookmark.movie.title %></h1>
+  <p>Overview: <%= bookmark.movie.overview %></p>
+<% end %>
+
+<p><em><%= @list.name.capitalize %></em> </p>
+<p><%= link_to 'Back to movie lists', lists_path %></p>
+<p><%= link_to 'Add a movie', new_list_bookmark_path(@list) %></p>
