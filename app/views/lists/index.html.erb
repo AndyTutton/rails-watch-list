@@ -1,14 +1,32 @@
-<h1>Movie lists</h1>
-<ol class="">
-  <% @lists.each do |list| %>
-    <%= link_to list_path(list) do %>
-      <li>
-        <p><%= list.name %></p>
-      </li>
-    <% end %>
-  <% end %>
-</ol>
-<p><%= link_to "Add movie list", new_list_path %></p>
+<div class="navbar">
+  <div>
+  </div>
+  <div>
+    <ul class="list-text">
+      <li>My lists</li>
+      <li>New List</li>
+    </ul>
+  </div>
+</div>
 
-<%# pe - print embedded %>
-<%# er - embedded ruby %>
+
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+    <p>Dive into the world of cinema</p>
+  </div>
+
+<div class="container">
+  <div class="card-title">
+    <h1 style="font-size: 30px"> My Lists </h1>
+    <p><%= link_to "Add movie list", new_list_path, class: "btn btn-success text-align: center" %></p>
+  </div>
+
+  <div class="card-grid">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class: "text-decoration-none" do %>
+          <%= list.name %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
