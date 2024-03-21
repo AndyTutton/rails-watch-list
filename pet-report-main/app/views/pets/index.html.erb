@@ -1,0 +1,13 @@
+<h1>Pets</h1>
+
+<%= link_to 'Add pet', new_pet_path, class:"btn btn-warning my-3"  %>
+
+<ol class="my-3">
+  <% @pets.each do |pet| %>
+    <%= link_to pet_path(pet) do %>
+      <li> 
+        <p><%= pet.name %> - Found: <%= pet.found_on %> </p>
+      </li>
+    <% end %>
+  <% end %>
+</ol>
